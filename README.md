@@ -46,3 +46,16 @@ As for weights, during data processing and experimenting, it was found that the 
 
 Furthermore RSSI weaker than -80 dbm is not estimated well and therefore all packets that match this are thrown out.
 
+### Vizualization:
+<img width="366" alt="Screen Shot 2021-09-15 at 7 27 12 PM" src="https://user-images.githubusercontent.com/82959055/133539406-9978206a-2f91-4c79-bb18-47501b23485f.png">
+
+We find the optimal point (cloud) whose sum of the distances from the point to the circles is the smallest.
+
+## Results
+
+An important factor in gathering data is the path on which the data was gathered.
+For best results it is best to gather from as many points around the router as possible, thus leading to the belief that there will be improved results using drones since with a drone you are not restricted to roads.
+The above behavior can be seen in the following examples:
+
+Home icon - actual location
+Cloud icon - estimate
