@@ -3,6 +3,8 @@
 This project is aimed at predicting a routers location based on RSSI values collected from its Beacon.
 The motivation for this project was to experiment and see if RSSI values alone are enough to predict the routers location with reasonable accuracy.
 
+for Usage scroll to bottom.
+
 ## Methodology
 
 1. Collect Beacon data and gps data and store into Json and CSV (Json was chosen to accommodate ESSID with a ",")
@@ -15,11 +17,11 @@ The current state of the project is designed as a POC, meaning not aimed at depl
 
 ### Languages
 
-The project combines both c++ and python.
+The project combines both c++ and python3.
 
 The sniffer is written in c++ using the library libtins due to the importance of efficiency in packet capturing.
 
-The rest of the project uses python.
+The rest of the project uses python3.9
 To both read gps information and process the data does not require performance and python has many Libraries offering easy solutions to generating maps and working with data, making it the ideal choice.
 
 ### Supported Platforms
@@ -102,5 +104,20 @@ From the results we can conclude that the algorithm heavily depends on a variety
 But with enough variety the Algorithm does a decent job at estimating the location, reaching errors of 5 to 15 meters.
 
 
+
+## Usage
+
+1. go into make_config.py and make changes according to setup used. Descriptions of configurations are provided in file.
+2. run python make_config.py to create the configuration file.
+3. run 'python setup.py install' to install python dependencies
+4. install the following c++ libs:
+	a. libtins
+	b. jsoncpp
+	c. libpcap
+4. change directory to sniffer
+5. run 'make' to produce executable
+6. place executable in location chosen in config file
+7. run 'python data_collection.py' to collect data
+8. run 'python data2map.py' to produce a map with the estimation
 
 
