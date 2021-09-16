@@ -89,6 +89,7 @@ Path 3:
 <img width="519" alt="Screen Shot 2021-09-15 at 7 39 03 PM" src="https://user-images.githubusercontent.com/82959055/133540453-2d5fcb9f-3361-492b-82f0-58422e4ade99.png">
 
 Path 4:
+
 <img width="366" alt="Screen Shot 2021-09-15 at 7 40 29 PM" src="https://user-images.githubusercontent.com/82959055/133540573-a02005d8-8817-44b0-8b2a-d6d2974404de.png">
 
 Combined data:
