@@ -49,7 +49,8 @@ Furthermore RSSI weaker than -80 dbm is not estimated well and therefore all pac
 ### Vizualization:
 <img width="366" alt="Screen Shot 2021-09-15 at 7 27 12 PM" src="https://user-images.githubusercontent.com/82959055/133539406-9978206a-2f91-4c79-bb18-47501b23485f.png">
 
-We find the optimal point (cloud) whose sum of the distances from the point to the circles is the smallest.
+The center of each point represents a location where a Beacon was received. The radius of each circle represents the distance that was calculated based on that Beacon's RSSI value.
+To find the router, we find the optimal point (cloud) whose sum of the distances from the point to the circles is the smallest.
 
 ## Results
 
