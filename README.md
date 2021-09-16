@@ -111,9 +111,13 @@ But with enough variety the Algorithm does a decent job at estimating the locati
 2. run python make_config.py to create the configuration file.
 3. run 'python setup.py install' to install python dependencies
 4. install the following c++ libs:
+
 	a. libtins
+	
 	b. jsoncpp
+	
 	c. libpcap
+	
 4. change directory to sniffer
 5. run 'make' to produce executable
 6. place executable in location chosen in config file
