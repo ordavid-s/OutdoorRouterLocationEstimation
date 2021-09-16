@@ -49,7 +49,8 @@ Furthermore RSSI weaker than -80 dbm is not estimated well and therefore all pac
 ### Vizualization:
 <img width="366" alt="Screen Shot 2021-09-15 at 7 27 12 PM" src="https://user-images.githubusercontent.com/82959055/133539406-9978206a-2f91-4c79-bb18-47501b23485f.png">
 
-The center of each point represents a location where a Beacon was received. The radius of each circle represents the distance that was calculated based on that Beacon's RSSI value.
+The center of each point represents a location where a Beacon was received.
+The radius of each circle represents the distance that was calculated based on that Beacon's RSSI value.
 To find the router, we find the optimal point (cloud) whose sum of the distances from the point to the circles is the smallest.
 
 ## Results
@@ -57,6 +58,31 @@ To find the router, we find the optimal point (cloud) whose sum of the distances
 An important factor in gathering data is the path on which the data was gathered.
 For best results it is best to gather from as many points around the router as possible, thus leading to the belief that there will be improved results using drones since with a drone you are not restricted to roads.
 The above behavior can be seen in the following examples:
+We walked different paths to see how accurate the algorithm was based on the data gathering path.
 
 Home icon - actual location
 Cloud icon - estimate
+
+Important: circles were made smaller in order to better see path that was taken
+
+Path 1:
+
+<img width="498" alt="Screen Shot 2021-09-15 at 7 21 00 PM" src="https://user-images.githubusercontent.com/82959055/133539744-afe820db-e900-448f-bd19-1c52a78bc441.png">
+
+Path 2:
+
+<img width="495" alt="Screen Shot 2021-09-15 at 7 35 41 PM" src="https://user-images.githubusercontent.com/82959055/133540128-1b62a25a-b23c-4ff5-96ec-ebf41a853138.png">
+
+Path 3:
+
+<img width="519" alt="Screen Shot 2021-09-15 at 7 39 03 PM" src="https://user-images.githubusercontent.com/82959055/133540453-2d5fcb9f-3361-492b-82f0-58422e4ade99.png">
+
+Path 4:
+<img width="366" alt="Screen Shot 2021-09-15 at 7 40 29 PM" src="https://user-images.githubusercontent.com/82959055/133540573-a02005d8-8817-44b0-8b2a-d6d2974404de.png">
+
+Combined data:
+
+<img width="481" alt="Screen Shot 2021-09-15 at 7 42 16 PM" src="https://user-images.githubusercontent.com/82959055/133540760-c75a9524-7070-4d57-b51f-0a3cc1fe2a3e.png">
+
+As can be seen in order to get accurate estimations it is important to get a variety of locations rather than a single path. As can be seen in Path 2, we did not pass close to the router and therefore the optimal location was on the wrong side of the street. To improve such situtations a better distance estimating model should be used. Unfortunately we did not have the time, resources or data to build a better model. But despite that if the data is varied results reach an accuracy 8 meters.
+
