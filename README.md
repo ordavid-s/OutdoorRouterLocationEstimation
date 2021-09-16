@@ -57,11 +57,13 @@ To find the router, we find the optimal point (cloud) whose sum of the distances
 ## Results
 
 An important factor in gathering data is the path on which the data was gathered.
-For best results it is best to gather from as many points around the router as possible, thus leading to the belief that there will be improved results using drones since with a drone you are not restricted to roads.
-The above behavior can be seen in the following examples:
+
+This can be seen in the following examples:
+
 We walked different paths to see how accurate the algorithm was based on the data gathering path.
 
 Home icon - actual location
+
 Cloud icon - estimate
 
 Important: circles were made smaller in order to better see path that was taken
