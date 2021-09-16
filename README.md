@@ -32,6 +32,7 @@ Currently there are no known bugs in either OS.
 - Add Monitor mode and Channel hopping capability to the interface class
 - Test on more routers and in different environments to better optimize distance estimation based on RSSI
 - Experiment with data collection by drone to reduce signal interference and further improve results
+- Attempt a machine learning approach for better distance estimation
 
 
 ## Prediction Algorithm
@@ -84,5 +85,9 @@ Combined data:
 
 <img width="481" alt="Screen Shot 2021-09-15 at 7 42 16 PM" src="https://user-images.githubusercontent.com/82959055/133540760-c75a9524-7070-4d57-b51f-0a3cc1fe2a3e.png">
 
-As can be seen in order to get accurate estimations it is important to get a variety of locations rather than a single path. As can be seen in Path 2, we did not pass close to the router and therefore the optimal location was on the wrong side of the street. To improve such situtations a better distance estimating model should be used. Unfortunately we did not have the time, resources or data to build a better model. But despite that if the data is varied results reach an accuracy 8 meters.
+As can be seen in order to get accurate estimations it is important to get a variety of paths rather than a single path. 
+In path 2 and path 3, we did not pass close to the router and therefore the optimal location was on the wrong side of the street.
+From the results we can conclude that the algorithm heavily depends on a variety of sampling locations and a lack of causes issues.
+But with enough variety the Algorithm does a decent job at estimating the location, reaching errors of 5 to 10 meters.
+
 
