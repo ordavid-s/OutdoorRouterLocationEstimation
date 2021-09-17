@@ -23,6 +23,28 @@ def merge_data(gps_data: pd.DataFrame, net_data: pd.DataFrame):
     return df
 
 
+def preprocess_data(df, step_size=80):
+    mean_data = []
+    for i in range(0,len(df), step_size):
+        average_rssi = np.mean(df[i:i + step_size]["rssi"])
+        lat = np.mean(df[i:i + step_size]["lat"])
+        long = np.mean(df[i:i + step_size]["long"])
+        ssid = df.loc[i, ["ssid"]].values[0]
+        freq = df.loc[i, ["freq"]].values[0]
+        addr = df.loc[i, ["addr"]].values[0]
+        dist = get_dist(freq, average_rssi)
+        data = {"addr": addr,
+                "rssi": average_rssi,
+                "ssid": ssid,
+                "freq": freq,
+                "lat": lat,
+                "long": long,
+                "dist": dist}
+        mean_data.append(data)
+    df = pd.DataFrame(mean_data)
+    return df
+
+
 def get_locations_distances_weights(df):
     dataset = {}
     for index, row in df.iterrows():
@@ -38,7 +60,7 @@ def get_locations_distances_weights(df):
     for index, row in df.iterrows():
         locations.append([row["lat"], row["long"]])
         distances.append(row["dist"])
-        max_sig = -75
+        max_sig = -85
         min_sig = -60
         if row["rssi"] < max_sig:
             weight = 0
