@@ -101,7 +101,7 @@ Combined data:
 As can be seen in order to get accurate estimations it is important to get a variety of paths rather than a single path. 
 In path 2 and path 3, we did not pass close to the router and therefore the optimal location was on the wrong side of the street.
 From the results we can conclude that the algorithm heavily depends on a variety of sampling locations and a lack of causes issues.
-But with enough variety the Algorithm does a decent job at estimating the location, reaching errors of 5 to 15 meters.
+But with enough variety the Algorithm does a decent job at estimating the location, reaching errors of 2 to 10 meters.
 
 
 
