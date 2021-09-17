@@ -48,9 +48,9 @@ CONFIG = {
     # Configurations for map creation
     "maps": {
         # path to gps data
-        "gps_path": "./data/gps_data.csv",
+        "gps_path": "./data/combined/gps_data.csv",
         # path to packets data
-        "packets_path": "./data/packet_data.json",
+        "packets_path": "./data/combined/packet_data.json",
         # icon to display on map, for more possibilities check folium website
         "icon_to_display": "cloud",
         # path to save map to
@@ -67,12 +67,12 @@ CONFIG = {
     },
     # data processing configuration
     "data_processing": {
-        # number of packets to use for data processing, takes data in intervals
-        "num_packets_to_use": 100,
-        # whether to use above number (True) or use all packets (False)
-        "limit_packets": False,
+        # number of packets to average before estimating distance
+        "num_packets_to_average": 80,
         # filter out all packets that are received at a weaker signal
-        "min_usable_rssi": -80,
+        "min_usable_rssi": -90,
+        # minimum rows to make guess
+        "min_rows_to_make_guess": 30
     }
 }
 

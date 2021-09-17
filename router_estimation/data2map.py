@@ -3,7 +3,7 @@ import json
 
 
 from data_processing.calculations import get_coordinates
-from data_processing.postprocess import get_locations_distances_weights, merge_data, get_data
+from data_processing.postprocess import get_locations_distances_weights, merge_data, get_data, preprocess_data
 
 CONFIG_NAME = "config.json"
 
@@ -18,15 +18,15 @@ def get_config():
 if __name__ == '__main__':
     config = get_config()
     ssid = config["maps"]["ssid"]
-    gps_data, packets_data = get_data(config["maps"]["gps_path"], config["maps"]["packets_path"] )
+    gps_data, packets_data = get_data(config["maps"]["gps_path"], config["maps"]["packets_path"])
     print("[+] retrieved data")
     df = merge_data(gps_data, packets_data)
     print("[+] merged data")
     df = df.loc[df['ssid'] == ssid]
+    df = df.reset_index()
+    df = preprocess_data(df, step_size=config["data_processing"]["num_packets_to_average"])
     df = df.loc[df['rssi'] > config["data_processing"]["min_usable_rssi"]]
-    if config["data_processing"]["limit_packets"]:
-        df = df.iloc[::int(len(df)/config["data_processing"]["num_packets_to_use"]), :]
-    if len(df) < config["data_processing"]["num_packets_to_use"] - 1:
+    if len(df) < config["data_processing"]["min_rows_to_make_guess"]:
         print("[!] Not enough data")
         exit(1)
     m = folium.Map(location=[config["maps"]["init_lat"], config["maps"]["init_long"]],
