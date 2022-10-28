@@ -41,7 +41,7 @@ Currently there are no known bugs in either OS.
 - Estimation confidence level using the achieved error in optimization process
 - Add Monitor mode and Channel hopping capability to the interface class
 - Test on more routers and in different environments to better optimize distance estimation based on RSSI
-- Experiment with data collection by drone to reduce signal interference and further improve results
+- Experiment with data collection by drone to reduce signal interference and further improve results while taking into consideration spherical estimations rather than circular
 - Attempt a machine learning approach for better distance estimation
 
 
